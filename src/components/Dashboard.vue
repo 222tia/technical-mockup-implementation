@@ -7,28 +7,28 @@ const chores = ref([
     name: 'Clean the Kitchen',
     days: ['Monday', 'Wednesday', 'Friday'],
     completed: [],
-    user: null,
+    user: 'User 1',
   },
   {
     id: 2,
     name: 'Take out the Trash',
     days: ['Tuesday', 'Thursday'],
     completed: [],
-    user: null,
+    user: 'User 2',
   },
   {
     id: 3,
     name: 'Do the Laundry',
     days: ['Monday', 'Saturday'],
     completed: [],
-    user: null,
+    user: 'User 3',
   },
   {
     id: 4,
-    name: 'Mop the Floor',
+    name: 'Do the Dishes',
     days: ['Sunday', 'Thursday'],
     completed: [],
-    user: null,
+    user: 'User 2',
   },
 ]);
 
@@ -66,39 +66,38 @@ const handleCheck = (chore, day, user) => {
             <h3>Chores</h3>
         </div>
         <div class="main-content">
-        <div class="chores">
-            <div class="chores-list">
-                <div
-                    class="chore-card"
-                    v-for="chore in chores"
-                    :key="chore.id"
-                >
-                    <h4>{{ chore.name }}</h4>
-                    <div class="chore-days">
-                        <div v-for="day in chore.days" :key="day" class="day-checkbox">
-                            <label>{{ day }}</label>
-                            <input
-                            type="checkbox"
-                            :checked="chore.completed.some(entry => entry.day === day)"
-                            @change="handleCheck(chore, day, users[0])" 
-                            />
+            <div class="chores">
+                <div class="chores-list">
+                    <div
+                        class="chore-card"
+                        v-for="chore in chores"
+                        :key="chore.id"
+                    >
+                        <h4>{{ chore.name }} -- {{ chore.user }}</h4>
+                        <div class="chore-days">
+                            <div v-for="day in chore.days" :key="day" class="day-checkbox">
+                                <label>{{ day }}</label>
+                                <input
+                                type="checkbox"
+                                :checked="chore.completed.some(entry => entry.day === day)"
+                                @change="handleCheck(chore, day, users[0])" 
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Leaderboard -->
-        <div class="leaderboard">
-            <h3>Leaderboard</h3>
-            <div v-for="user in users" :key="user.id" class="leaderboard-item">
-            <div class="leaderboard-user">
-                <span>{{ user.icon }}</span>
-                <span>{{ user.name }}</span>
+            <div class="leaderboard">
+                <h3>Leaderboard</h3>
+                <div v-for="user in users" :key="user.id" class="leaderboard-item">
+                <div class="leaderboard-user">
+                    <span>{{ user.icon }}</span>
+                    <span>{{ user.name }}</span>
+                </div>
+                <span>{{ user.completedChores }} chore(s) completed</span>
+                </div>
             </div>
-            <span>{{ user.completedChores }} chore(s) completed</span>
-            </div>
-        </div>
         </div>
     </div>
 
