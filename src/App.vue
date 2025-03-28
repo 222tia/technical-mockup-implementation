@@ -24,12 +24,12 @@
 
 .navigation-bar {
     width: 100%;
-    height: 50px; /* Adjusted height for better visibility */
-    background-color: #007bff; /* Blue background */
+    height: 50px; 
+    background-color: #007bff; 
     display: flex;
-    justify-content: right; /* Center the items */
-    align-items: center; /* Vertically center the links */
-    gap: 20px; /* Space between navigation links */
+    justify-content: right;
+    align-items: center; 
+    gap: 20px; 
   }
 
   .navigation-bar a {
@@ -41,9 +41,8 @@
     transition: background-color 0.3s, color 0.3s;
   }
 
-  /* Hover effect for links */
   .navigation-bar a:hover {
-    background-color: #0056b3; /* Darker blue when hovered */
+    background-color: #0056b3; 
     color: white;
   }
 
