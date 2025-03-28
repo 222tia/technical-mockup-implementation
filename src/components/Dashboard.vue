@@ -38,7 +38,6 @@ const users = ref([
   { id: 3, name: 'User 3', icon: '👩‍🎓', completedChores: 0 },
 ]);
 
-// Handle completion of chore on specific days
 const handleCheck = (chore, day, user) => {
   const dayIndex = chore.completed.findIndex((entry) => entry.day === day);
   if (dayIndex === -1) {
@@ -160,14 +159,14 @@ const handleCheck = (chore, day, user) => {
 
 .chore-days {
   display: flex;
-  flex-wrap: wrap; /* Allows checkboxes to wrap horizontally when necessary */
-  gap: 10px; /* Space between checkboxes */
+  flex-wrap: wrap; 
+  gap: 10px; 
 }
 
 .day-checkbox {
   display: flex;
   align-items: center;
-  gap: 5px; /* Space between checkbox and day label */
+  gap: 5px; 
 }
 
 .day-checkbox input[type="checkbox"] {
