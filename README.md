@@ -1,6 +1,6 @@
 # technical-mockup-implementation
 
-username: username
+username: username <br>
 password: password
 
 ## Recommended IDE Setup
