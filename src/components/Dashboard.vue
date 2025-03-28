@@ -61,7 +61,7 @@ const handleCheck = (chore, day, user) => {
                 </div>
             </div>
         </div>
-        
+
         <div style="text-align: left;">
             <h3>Chores</h3>
         </div>
@@ -75,16 +75,12 @@ const handleCheck = (chore, day, user) => {
                 >
                     <h4>{{ chore.name }}</h4>
                     <div class="chore-days">
-                        <div
-                            v-for="day in chore.days"
-                            :key="day"
-                            class="day-checkbox"
-                        >
+                        <div v-for="day in chore.days" :key="day" class="day-checkbox">
                             <label>{{ day }}</label>
                             <input
                             type="checkbox"
                             :checked="chore.completed.some(entry => entry.day === day)"
-                            @change="handleCheck(chore, day, users[0])"
+                            @change="handleCheck(chore, day, users[0])" 
                             />
                         </div>
                     </div>
@@ -165,13 +161,14 @@ const handleCheck = (chore, day, user) => {
 
 .chore-days {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap; /* Allows checkboxes to wrap horizontally when necessary */
+  gap: 10px; /* Space between checkboxes */
 }
 
 .day-checkbox {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px; /* Space between checkbox and day label */
 }
 
 .day-checkbox input[type="checkbox"] {
