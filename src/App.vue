@@ -5,8 +5,6 @@
 <template>
   <div style="width: 100vw">
     <div class="navigation-bar">
-      <router-link to="/Dashboard">Dashboard</router-link>
-      <router-link to="/CreateChore">Create Chore</router-link>
       <router-link to="/">Log In</router-link>
     </div>
 

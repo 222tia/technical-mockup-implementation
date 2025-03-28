@@ -85,7 +85,10 @@ const handleCheck = (chore, day, user) => {
                         </div>
                     </div>
                 </div>
+
             </div>
+
+            
 
             <div class="leaderboard">
                 <h3>Leaderboard</h3>
@@ -98,6 +101,12 @@ const handleCheck = (chore, day, user) => {
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="add-chore-btn">
+        <router-link to="/CreateChore">
+            <button>Add Chore</button>
+        </router-link>
     </div>
 
 </template>
@@ -195,5 +204,26 @@ const handleCheck = (chore, day, user) => {
 
 .leaderboard-user span {
   display: block;
+}
+
+.add-chore-btn {
+  display: flex;
+  justify-content: left;
+  margin-top: 20px;
+  margin-left: 15px;
+}
+
+.add-chore-btn button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-chore-btn button:hover {
+  background-color: #45a049;
 }
 </style>
