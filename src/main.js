@@ -8,14 +8,15 @@ import CreateChore from './components/CreateChore.vue';
 import Dashboard from './components/Dashboard.vue';
 import LogIn from './components/LogIn.vue';
 
+const routes = [
+  { path: '/', name: 'LogIn', component: LogIn },
+  { path: '/Dashboard', name: 'Dashboard', component: Dashboard },
+  { path: '/CreateChore', name: 'CreateChore', component: CreateChore },
+];
+
 const router = createRouter({
   history: createWebHistory(),
-  routes: [
-    { path: "/", name: "LogIn", component: LogIn },
-    { path: "/Dashboard", name: "Dashboard", component: Dashboard },
-    { path: "/CreateChore", name: "CreateChore", component: CreateChore },
-  ],
+  routes,
 });
 
-createApp(App).mount('#app')
-app.use(router);
+createApp(App).use(router).mount('#app')

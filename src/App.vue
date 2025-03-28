@@ -3,34 +3,50 @@
 </script>
 
 <template>
+  <div style="width: 100vw">
+    <div class="navigation-bar">
+      <router-link to="/Dashboard">Dashboard</router-link>
+      <router-link to="/CreateChore">Create Chore</router-link>
+      <router-link to="/">Log In</router-link>
+    </div>
+
+    <div class="centered-components">
+      <RouterView></RouterView>
+    </div>
+
+  </div>
 
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
+
+.centered-components {
+  text-align: center;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
+.navigation-bar {
+    width: 100%;
+    height: 50px; /* Adjusted height for better visibility */
+    background-color: #007bff; /* Blue background */
     display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    justify-content: right; /* Center the items */
+    align-items: center; /* Vertically center the links */
+    gap: 20px; /* Space between navigation links */
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
+  .navigation-bar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
   }
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+  /* Hover effect for links */
+  .navigation-bar a:hover {
+    background-color: #0056b3; /* Darker blue when hovered */
+    color: white;
   }
-}
+
 </style>
